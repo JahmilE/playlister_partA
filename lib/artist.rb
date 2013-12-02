@@ -1,3 +1,4 @@
+require 'pry'
 class Artist
 
   attr_accessor :name, :songs, :genres
@@ -7,7 +8,7 @@ class Artist
       @songs = []
       @genres = []
       @@artists << self #useful for counting how many objects/instances of the artist class were made
-      
+
     end
 
     def self.all #(how to create class method)
@@ -18,12 +19,17 @@ class Artist
       @@artists.length  #can use .count, .length or .size
     end
 
-    def songs_count # songs are a child/attribute of an instance of the Artist class which is why we say self.songs (all the songs that that instance/ artist made)
+    def songs_count # songs are a child/attribute of an instance of the Artist class which is why we say self.songs (all the songs that instance/artist object made)
       self.songs.length
     end
 
     def add_song(song)
       self.songs << song
+      self.genres << song.genre
+      if song.genre.is_a?(Genre) && !song.genre.artists.include?(self) # if the new artist is already in the genre.artists array- don't add them
+  
+        song.genre.add_artist(self)
+      end
     end
 
 

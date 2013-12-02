@@ -101,7 +101,7 @@ describe "playlister" do
       artist.add_song(song)
     end
 
-    genre.artists.count.should eq(2)
+    genre.artists.count.should eq(2) #it's looking for 2 artist objects in the array. g1.artists returns []
   end
 
   it 'A genres Artists are unique' do
@@ -113,7 +113,6 @@ describe "playlister" do
       song.genre = genre
       artist.add_song(song)
     end
-
     genre.artists.count.should eq(1)
   end
 

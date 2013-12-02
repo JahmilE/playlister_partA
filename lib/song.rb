@@ -28,10 +28,9 @@
 class Song
 
   attr_accessor :name, :genre
-    
-    def initialize(name = "", genre = '')
-      @name= name
-      @genre= genre
+
+    def initialize()
+      self.genre.add_song(self) if self.genre.is_a?(Genre)
     end
 end
 

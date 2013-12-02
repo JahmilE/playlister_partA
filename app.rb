@@ -1,3 +1,3 @@
-require './lib/song'
-require './lib/artist'
-require './lib/genre'
+require './song'
+require './artist'
+require './genre'
