@@ -81,6 +81,9 @@ describe "playlister" do
     genre.name.should eq('rap')
   end
 
+
+
+
   it 'A genre has many songs' do
     genre = Genre.new.tap{|g| g.name = 'rap'} 
     [1,2].each do #loop twice and each time create a new song instance and for each instance set the genre to the genre object "Rap"
@@ -90,6 +93,9 @@ describe "playlister" do
 
     genre.songs.count.should eq(2)
   end
+
+
+
 
   it 'A genre has many artists' do
     genre = Genre.new.tap{|g| g.name = 'rap'}

@@ -24,8 +24,10 @@ class Genre
     def add_song(song)
       self.songs << song
     end
+
   end
 
+  
 
 # #it 'A genre has many songs' do
 #     genre = Genre.new.tap{|g| g.name = 'rap'} 

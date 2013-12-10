@@ -27,9 +27,14 @@
 
 class Song
 
-  attr_accessor :name, :genre
+  attr_accessor :name
+  attr_reader :genre
 
     def initialize()
+    end
+
+    def genre=(genre)
+      @genre = genre
       self.genre.add_song(self) if self.genre.is_a?(Genre)
     end
 end

@@ -30,7 +30,13 @@ class Artist
   
         song.genre.add_artist(self)
       end
+
     end
+
+    def genres
+    songs.collect {|song| song.genre}
+    end
+
 
 
 
